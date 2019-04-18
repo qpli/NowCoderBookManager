@@ -13,7 +13,7 @@ public interface TicketDao {
     String select_field=" id, "+insert_field;
 
     @Insert({"insert into ",table_name,"(",insert_field,
-            ") values (#{userId},#{ticket},#{exporedAt})"})
+            ") values (#{userId},#{ticket},#{expiredAt})"})
     int addTicket(Ticket ticket);
 
     @Select({"select ",select_field," from ",table_name," where user_id=#{uid}"})

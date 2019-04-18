@@ -53,14 +53,15 @@ public class BookController {
         return "redirect:/index";
     }
 
-    @RequestMapping(path = {"books/{bookId:[0-9]+]/delete}"},method = {RequestMethod.GET})
+    @RequestMapping(path = {"/books/{bookId:[0-9]+}/delete"},method = {RequestMethod.GET})
     public String deleteBook(
             @PathVariable("bookId") int bookId)
     {
         bookService.delectBooks(bookId);
-        return "redirect:index";
+        return "redirect:/index";
     }
 
+    @RequestMapping(path = {"/books/{bookId:[0-9]+}/recover"},method = {RequestMethod.GET})
     public String recoverBook(
             @PathVariable("bookId") int bookId)
     {
