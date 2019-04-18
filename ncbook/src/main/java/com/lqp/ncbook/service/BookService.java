@@ -23,8 +23,12 @@ public class BookService {
 
     public void delectBooks(int id)
     {
-        bookDao.updateBookStatus(id, BookStatusEnum.NORMAL.getValue());
+        bookDao.updateBookStatus(id, BookStatusEnum.DELETE.getValue());
     }
 
+    public void recoverBooks(int id)
+    {
+        bookDao.updateBookStatus(id,BookStatusEnum.NORMAL.getValue());
+    }
 
 }
